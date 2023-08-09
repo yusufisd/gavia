@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\ActivityCategoryController;
 use App\Http\Controllers\Backend\ActivityController;
+use App\Http\Controllers\Backend\AuthController;
 use App\Http\Controllers\Backend\BlogCategoryController;
 use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\DashboardController;
@@ -21,13 +22,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', function () {
-    return view('backend.login');
-});
+Route::get('login',[AuthController::class,'login'])->name('admin.login');
+Route::post('login',[AuthController::class,'login_post'])->name('admin.login.post');
 
-
-Route::prefix('admin')->name('admin.')->group(function () {
-
+Route::prefix('admin')->name('admin.')->middleware('auth:admin')->group(function () {
+    Route::get('logout',[AuthController::class,'logout'])->name('logout');
     Route::get('/',[DashboardController::class,'index'])->name('index');
 
     // BLOG KATEGORİ İŞLEMLERİ

@@ -562,7 +562,7 @@
                                     <!--end::Menu item-->
                                     <!--begin::Menu item-->
                                     <div class="menu-item px-5">
-                                        <a href="sign_in.html" class="menu-link px-5">Çıkış</a>
+                                        <a href="{{route('admin.logout')}}" class="menu-link px-5">Çıkış</a>
                                     </div>
                                     <!--end::Menu item-->
                                 </div>
