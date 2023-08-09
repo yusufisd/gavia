@@ -20,7 +20,7 @@ class BlogCategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.blogCategory.add');
     }
 
     /**

@@ -32,12 +32,12 @@
                             <div class="card-toolbar">
                                 <!--begin::Toolbar-->
                                 <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
-                                    <a type="button" class="btn btn-outline btn-outline-success" href="add_blog.html">
+                                    <a type="button" class="btn btn-outline btn-outline-success" href="{{route('admin.blog.add')}}">
                                         <i class="fa-solid fa-plus"></i>Yeni Ekle
                                     </a>
 
                                     <a type="button" class="btn btn-outline btn-outline-success ms-5"
-                                        href="blog_categories.html">
+                                        href="{{route('admin.blogCategory.list')}}">
                                         <i class="fa fa-newspaper" aria-hidden="true"></i> Blog Kategorileri
                                     </a>
 

@@ -28,6 +28,8 @@
     <link href="{{ asset('assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css/gavia_style.css') }}" rel="stylesheet" type="text/css" />
+
+    @yield('css')
     <!--end::Global Stylesheets Bundle-->
     <!-- begin:: Extra Style -->
     <style>
@@ -643,7 +645,7 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="blog/blog_list.html">
+                                    <a class="menu-link" href="{{route('admin.blog.list')}}">
                                         <span class="menu-icon">
                                             <i class="fa fa-newspaper" aria-hidden="true"></i>
                                         </span>
@@ -656,7 +658,7 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="pages/page_list.html">
+                                    <a class="menu-link" href="{{route('admin.page.list')}}">
                                         <span class="menu-icon">
                                             <i class="fa fa-file-text" aria-hidden="true"></i>
                                         </span>
@@ -682,7 +684,7 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="activity/activity_list.html">
+                                    <a class="menu-link" href="{{route('admin.activity.list')}}">
                                         <span class="menu-icon">
                                             <i class="fa fa-users" aria-hidden="true"></i>
                                         </span>
@@ -695,7 +697,7 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="slider/slider_list.html">
+                                    <a class="menu-link" href="{{route('admin.slider.list')}}">
                                         <span class="menu-icon">
                                             <i class="fa fa-sliders" aria-hidden="true"></i>
                                         </span>
@@ -708,7 +710,7 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="referance/referance_list.html">
+                                    <a class="menu-link" href="{{route('admin.reference.list')}}">
                                         <span class="menu-icon">
                                             <i class="fa fa-briefcase" aria-hidden="true"></i>
                                         </span>
@@ -721,7 +723,7 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="personnel/personnel_list.html">
+                                    <a class="menu-link" href="{{route('admin.personel.list')}}">
                                         <span class="menu-icon">
                                             <i class="fa fa-address-card" aria-hidden="true"></i>
                                         </span>
@@ -734,7 +736,7 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="photo_gallery/photo_list.html">
+                                    <a class="menu-link" href="{{route('admin.gallery.list')}}">
                                         <span class="menu-icon">
                                             <i class="fa fa-image" aria-hidden="true"></i>
                                         </span>
@@ -747,7 +749,7 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="video_gallery/video_list.html">
+                                    <a class="menu-link" href="{{route('admin.videoGallery.list')}}">
                                         <span class="menu-icon">
                                             <i class="fa fa-video" aria-hidden="true"></i>
                                         </span>
@@ -760,7 +762,7 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="popup/popup_list.html">
+                                    <a class="menu-link" href="{{route('admin.popup.list')}}">
                                         <span class="menu-icon">
                                             <i class="fa fa-object-ungroup" aria-hidden="true"></i>
                                         </span>
