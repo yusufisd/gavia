@@ -69,6 +69,9 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+
+                                        @foreach ($data as $item)
+                                            
                                         <tr class="align-middle">
                                             <td>
                                                 <div class="form-check form-check-sm form-check-custom form-check-solid">
@@ -81,13 +84,13 @@
                                                     alt="">
                                             </td>
 
-                                            <td>Social Media</td>
-                                            <td>NEW TRENDS IN WEB</td>
+                                            <td>{{$item->title}}</td>
+                                            <td>{{$item->short_description}}</td>
                                             <td>
                                                 <div
                                                     class="form-check form-check-solid form-switch form-check-custom fv-row justify-content-center">
                                                     <input class="form-check-input w-50px h-25px" type="checkbox"
-                                                        id="activity_status_1" checked="checked">
+                                                        id="activity_status_1" {{$item->status == 1 ? 'checked' : ''}}>
                                                     <label class="form-check-label" for="activity_status_1"></label>
                                                 </div>
                                             </td>
@@ -98,7 +101,7 @@
                                                     <i class="fa-solid fa-eye fs-3"></i>
                                                 </a>
 
-                                                <a href="edit_activity.html"
+                                                <a href="{{route('admin.activity.edit',$item->id)}}"
                                                     class="px-2 btn btn-icon btn-bg-light btn-active-color-secondary btn-sm me-1"
                                                     title="Düzenle">
                                                     <i class="fa-regular fa-pen-to-square fs-3"></i>
@@ -150,6 +153,9 @@
                                                 </a>
                                             </td>
                                         </tr>
+
+                                        @endforeach
+
                                     </tbody>
                                 </table>
                             </div>

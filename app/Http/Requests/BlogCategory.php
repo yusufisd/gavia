@@ -11,7 +11,7 @@ class BlogCategory extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,22 @@ class BlogCategory extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'blog_category_name_tr' => 'required',
+            'blog_category_url_tr' => 'required',
+            'blog_category_detail_no' => 'required',
+            'blog_category_name_en' => 'required',
+            'blog_category_url_en' => 'required',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'blog_category_name_tr' => 'Blog kategori ismi boş bırakılamaz.',
+            'blog_category_url_tr' => 'Blog kategori linki boş bırakılamaz.',
+            'blog_category_detail_no' => 'Blog kategori sırası boş bırakılamaz.',
+            'blog_category_name_en' => 'Blog kategori ingilizce ismi boş bırakılamaz.',
+            'blog_category_url_en' => 'Blog kategori ingilizce linki boş bırakılamaz.',
         ];
     }
 }

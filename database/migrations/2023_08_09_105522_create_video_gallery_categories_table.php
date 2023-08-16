@@ -19,6 +19,10 @@ return new class extends Migration
             $table->integer('status')->default(1);
             $table->string('link');
             $table->softDeletes();
+            $table->string('seo_title')->nullable();
+            $table->string('seo_description')->nullable();
+            $table->string('seo_key')->nullable();
+            $table->integer('seo_statu')->default(1);
             $table->timestamps();
         });
     }

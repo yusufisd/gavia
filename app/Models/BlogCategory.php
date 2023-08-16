@@ -9,5 +9,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class BlogCategory extends Model
 {
     use HasFactory, SoftDeletes;
+
+      protected $casts = [
+        'seo_key' => 'array'
+    ];
     protected $guarded = [];
 }

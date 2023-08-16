@@ -28,7 +28,7 @@
     <link href="{{ asset('assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css/gavia_style.css') }}" rel="stylesheet" type="text/css" />
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     @yield('css')
     <!--end::Global Stylesheets Bundle-->
     <!-- begin:: Extra Style -->
@@ -562,7 +562,7 @@
                                     <!--end::Menu item-->
                                     <!--begin::Menu item-->
                                     <div class="menu-item px-5">
-                                        <a href="{{route('admin.logout')}}" class="menu-link px-5">Çıkış</a>
+                                        <a href="{{ route('admin.logout') }}" class="menu-link px-5">Çıkış</a>
                                     </div>
                                     <!--end::Menu item-->
                                 </div>
@@ -645,7 +645,7 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="{{route('admin.blog.list')}}">
+                                    <a class="menu-link" href="{{ route('admin.blog.list') }}">
                                         <span class="menu-icon">
                                             <i class="fa fa-newspaper" aria-hidden="true"></i>
                                         </span>
@@ -658,7 +658,7 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="{{route('admin.page.list')}}">
+                                    <a class="menu-link" href="{{ route('admin.page.list') }}">
                                         <span class="menu-icon">
                                             <i class="fa fa-file-text" aria-hidden="true"></i>
                                         </span>
@@ -684,7 +684,7 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="{{route('admin.activity.list')}}">
+                                    <a class="menu-link" href="{{ route('admin.activity.list') }}">
                                         <span class="menu-icon">
                                             <i class="fa fa-users" aria-hidden="true"></i>
                                         </span>
@@ -697,7 +697,7 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="{{route('admin.slider.list')}}">
+                                    <a class="menu-link" href="{{ route('admin.slider.list') }}">
                                         <span class="menu-icon">
                                             <i class="fa fa-sliders" aria-hidden="true"></i>
                                         </span>
@@ -710,7 +710,7 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="{{route('admin.reference.list')}}">
+                                    <a class="menu-link" href="{{ route('admin.reference.list') }}">
                                         <span class="menu-icon">
                                             <i class="fa fa-briefcase" aria-hidden="true"></i>
                                         </span>
@@ -723,7 +723,7 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="{{route('admin.personel.list')}}">
+                                    <a class="menu-link" href="{{ route('admin.personel.list') }}">
                                         <span class="menu-icon">
                                             <i class="fa fa-address-card" aria-hidden="true"></i>
                                         </span>
@@ -736,7 +736,7 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="{{route('admin.gallery.list')}}">
+                                    <a class="menu-link" href="{{ route('admin.gallery.list') }}">
                                         <span class="menu-icon">
                                             <i class="fa fa-image" aria-hidden="true"></i>
                                         </span>
@@ -749,7 +749,7 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="{{route('admin.videoGallery.list')}}">
+                                    <a class="menu-link" href="{{ route('admin.videoGallery.list') }}">
                                         <span class="menu-icon">
                                             <i class="fa fa-video" aria-hidden="true"></i>
                                         </span>
@@ -762,7 +762,7 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="{{route('admin.popup.list')}}">
+                                    <a class="menu-link" href="{{ route('admin.popup.list') }}">
                                         <span class="menu-icon">
                                             <i class="fa fa-object-ungroup" aria-hidden="true"></i>
                                         </span>
@@ -859,7 +859,7 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="user/user_list.html">
+                                    <a class="menu-link" href="{{ route('admin.subAdmin.list') }}">
                                         <span class="menu-icon">
                                             <i class="fa fa-user" aria-hidden="true"></i>
                                         </span>
@@ -1034,7 +1034,7 @@
                     <!--begin::Content wrapper-->
                     <div class="d-flex flex-column flex-column-fluid">
                         <!--begin::Toolbar-->
-                      
+
                         <!--end::Toolbar-->
                         <!--begin::Content-->
                         @yield('content')
@@ -1112,6 +1112,7 @@
     <!--end::Custom Javascript-->
     <!--end::Javascript-->
     <!--begin:: extra js-->
+    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
 
 
     @yield('script')
@@ -1198,6 +1199,8 @@
         // end: DataTable Scripts
     </script>
     <!--end:: extra js-->
+    @include('sweetalert::alert')
+
 </body>
 <!--end::Body-->
 

@@ -65,6 +65,9 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+
+                                        @foreach ($data as $item)
+                                            
                                         <tr class="align-middle">
                                             <td>
                                                 <div class="form-check form-check-sm form-check-custom form-check-solid">
@@ -72,13 +75,13 @@
                                                         value="1" />
                                                 </div>
                                             </td>
-                                            <td class="w-40">Social Media</td>
-                                            <td class="text-center">1</td>
+                                            <td class="w-40">{{$item->title}}</td>
+                                            <td class="text-center">{{$item->queue}}</td>
                                             <td>
                                                 <div
                                                     class="form-check form-check-solid form-switch form-check-custom fv-row justify-content-center">
                                                     <input class="form-check-input w-50px h-25px" type="checkbox"
-                                                        id="activity_status_1" checked="checked">
+                                                        id="activity_status_1" {{$item->status == 1 ? 'checked' : ''}}>
                                                     <label class="form-check-label" for="activity_status_1"></label>
                                                 </div>
                                             </td>
@@ -88,7 +91,7 @@
                                                     title="Görüntüle">
                                                     <i class="fa-solid fa-eye fs-3"></i>
                                                 </a>
-                                                <a href="edit_activity_category.html"
+                                                <a href="{{route('admin.activityCategory.edit',$item->id)}}"
                                                     class="px-2 btn btn-icon btn-bg-light btn-active-color-secondary btn-sm me-1"
                                                     title="Düzenle">
                                                     <i class="fa-regular fa-pen-to-square fs-3"></i>
@@ -100,41 +103,10 @@
                                                 </a>
                                             </td>
                                         </tr>
-                                        <tr class="align-middle">
-                                            <td>
-                                                <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                    <input class="form-check-input my-input" type="checkbox"
-                                                        value="1" />
-                                                </div>
-                                            </td>
-                                            <td class="w-40">Entertainment</td>
-                                            <td class="text-center">1</td>
-                                            <td>
-                                                <div
-                                                    class="form-check form-check-solid form-switch form-check-custom fv-row justify-content-center">
-                                                    <input class="form-check-input w-50px h-25px" type="checkbox"
-                                                        id="activity_status_2" checked="">
-                                                    <label class="form-check-label" for="activity_status_2"></label>
-                                                </div>
-                                            </td>
-                                            <td class="text-center">
-                                                <a href=""
-                                                    class="px-2 btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
-                                                    title="Görüntüle">
-                                                    <i class="fa-solid fa-eye fs-3"></i>
-                                                </a>
-                                                <a href="edit_activity_category.html"
-                                                    class="px-2 btn btn-icon btn-bg-light btn-active-color-secondary btn-sm me-1"
-                                                    title="Düzenle">
-                                                    <i class="fa-regular fa-pen-to-square fs-3"></i>
-                                                </a>
-                                                <a href=""
-                                                    class="px-2 btn btn-icon btn-bg-light btn-active-color-danger btn-sm me-1"
-                                                    data-bs-toggle="modal" data-bs-target="#delete_modal" title="Sil">
-                                                    <i class="fa-regular fa-trash-can fs-4"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
+
+                                        @endforeach
+
+                                      
                                     </tbody>
                                 </table>
                             </div>

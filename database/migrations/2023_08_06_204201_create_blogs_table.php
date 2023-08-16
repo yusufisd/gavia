@@ -16,13 +16,17 @@ return new class extends Migration
             $table->string('title');
             $table->string('short_description');
             $table->longText('description');
-            $table->string('image');
-            $table->integer('category_id');
+            $table->string('image')->nullable();
+            $table->string('category_id');
             $table->string('link');
             $table->integer('queue');
-            $table->dateTime('live_start');
-            $table->dateTime('live_finish');
+            $table->timestamp('live_start',$precision = 0)->nullable();
+            $table->timestamp('live_finish',$precision = 0)->nullable();
             $table->integer('status')->default(1);
+            $table->string('seo_title')->nullable();
+            $table->string('seo_description')->nullable();
+            $table->string('seo_key')->nullable();
+            $table->integer('seo_statu')->default(1);
             $table->timestamps();
         });
     }

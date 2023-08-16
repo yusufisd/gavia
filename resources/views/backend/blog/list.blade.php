@@ -32,12 +32,13 @@
                             <div class="card-toolbar">
                                 <!--begin::Toolbar-->
                                 <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
-                                    <a type="button" class="btn btn-outline btn-outline-success" href="{{route('admin.blog.add')}}">
+                                    <a type="button" class="btn btn-outline btn-outline-success"
+                                        href="{{ route('admin.blog.add') }}">
                                         <i class="fa-solid fa-plus"></i>Yeni Ekle
                                     </a>
 
                                     <a type="button" class="btn btn-outline btn-outline-success ms-5"
-                                        href="{{route('admin.blogCategory.list')}}">
+                                        href="{{ route('admin.blogCategory.list') }}">
                                         <i class="fa fa-newspaper" aria-hidden="true"></i> Blog Kategorileri
                                     </a>
 
@@ -172,91 +173,56 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="align-middle">
-                                            <td>
-                                                <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                    <input class="form-check-input my-input" type="checkbox"
-                                                        value="1" />
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <img src="../assets/media/stock/ecommerce/197.gif" class="w-75px ms-n1"
-                                                    alt="">
-                                            </td>
 
-                                            <td>Social Media</td>
-                                            <td>NEW TRENDS IN WEB</td>
-                                            <td>Lorem ipsum dolor sit amet, consectetur</td>
-                                            <td class="text-center">1</td>
-                                            <td>
-                                                <div
-                                                    class="form-check form-check-solid form-switch form-check-custom fv-row justify-content-center">
-                                                    <input class="form-check-input w-50px h-25px" type="checkbox"
-                                                        id="blog_status_1" checked="checked">
-                                                    <label class="form-check-label" for="blog_status_1"></label>
-                                                </div>
-                                            </td>
-                                            <td class="text-center">
-                                                <a href=""
-                                                    class="px-2 btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
-                                                    title="Görüntüle">
-                                                    <i class="fa-solid fa-eye fs-3"></i>
-                                                </a>
+                                        @foreach ($data as $item)
+                                            <tr class="align-middle">
+                                                <td>
+                                                    <div
+                                                        class="form-check form-check-sm form-check-custom form-check-solid">
+                                                        <input class="form-check-input my-input" type="checkbox"
+                                                            value="1" />
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <img src="{{$item->image != null ? url('assets'.$item->image) : ''}}"
+                                                        class="w-75px ms-n1" alt="">
+                                                </td>
 
-                                                <a href="edit_blog.html"
-                                                    class="px-2 btn btn-icon btn-bg-light btn-active-color-secondary btn-sm me-1"
-                                                    title="Düzenle">
-                                                    <i class="fa-regular fa-pen-to-square fs-3"></i>
-                                                </a>
-                                                <a href=""
-                                                    class="px-2 btn btn-icon btn-bg-light btn-active-color-danger btn-sm me-1"
-                                                    data-bs-toggle="modal" data-bs-target="#delete_modal" title="Sil">
-                                                    <i class="fa-regular fa-trash-can fs-4"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr class="align-middle">
-                                            <td>
-                                                <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                    <input class="form-check-input my-input" type="checkbox"
-                                                        value="1" />
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <img src="../assets/media/stock/ecommerce/101.gif" class="w-75px ms-n1"
-                                                    alt="">
-                                            </td>
-                                            <td>Entertainment</td>
-                                            <td>THE SOUND OF LIFE</td>
-                                            <td>Lorem ipsum dolor sit amet, consectetur</td>
-                                            <td class="text-center">1</td>
-                                            <td>
-                                                <div
-                                                    class="form-check form-check-solid form-switch form-check-custom fv-row justify-content-center">
-                                                    <input class="form-check-input w-50px h-25px" type="checkbox"
-                                                        id="blog_status_2" checked="">
-                                                    <label class="form-check-label" for="blog_status_2"></label>
-                                                </div>
-                                            </td>
-                                            <td class="text-center">
-                                                <a href=""
-                                                    class="px-2 btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
-                                                    title="Görüntüle">
-                                                    <i class="fa-solid fa-eye fs-3"></i>
-                                                </a>
+                                                <td>{{ $item->Kategori->title }}</td>
+                                                <td>{{ $item->title }}</td>
+                                                <td>{{ substr($item->short_description,0,50) }}...</td>
+                                                <td class="text-center">{{$item->queue}}</td>
+                                                <td>
+                                                    <div
+                                                        class="form-check form-check-solid form-switch form-check-custom fv-row justify-content-center">
+                                                        <input class="form-check-input w-50px h-25px" type="checkbox"
+                                                            id="blog_status_1" {{$item->status == 1 ? 'checked' : ''}} >
+                                                        <label class="form-check-label" for="blog_status_1"></label>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <a href=""
+                                                        class="px-2 btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
+                                                        title="Görüntüle">
+                                                        <i class="fa-solid fa-eye fs-3"></i>
+                                                    </a>
 
-                                                <a href="edit_blog.html"
-                                                    class="px-2 btn btn-icon btn-bg-light btn-active-color-secondary btn-sm me-1"
-                                                    title="Düzenle">
-                                                    <i class="fa-regular fa-pen-to-square fs-3"></i>
-                                                </a>
-                                                <a href=""
-                                                    class="px-2 btn btn-icon btn-bg-light btn-active-color-danger btn-sm me-1"
-                                                    data-bs-toggle="modal" data-bs-target="#delete_modal" title="Sil">
-                                                    <i class="fa-regular fa-trash-can fs-4"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
+                                                    <a href="{{route('admin.blog.edit',$item->id)}}"
+                                                        class="px-2 btn btn-icon btn-bg-light btn-active-color-secondary btn-sm me-1"
+                                                        title="Düzenle">
+                                                        <i class="fa-regular fa-pen-to-square fs-3"></i>
+                                                    </a>
+                                                    <a href=""
+                                                        class="px-2 btn btn-icon btn-bg-light btn-active-color-danger btn-sm me-1"
+                                                        data-bs-toggle="modal" data-bs-target="#delete_modal"
+                                                        title="Sil">
+                                                        <i class="fa-regular fa-trash-can fs-4"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+
+
                                     </tbody>
                                 </table>
                             </div>
